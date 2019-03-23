@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace VirginiaSmithAndMarkAndersonPie.Models
 {
@@ -11,9 +9,9 @@ namespace VirginiaSmithAndMarkAndersonPie.Models
 
         public MockPieRepository()
         {
-            if(_pies == null)
+            if (_pies == null)
             {
-                InitializePies();               
+                InitializePies();
             }
         }
 
