@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using VirginiaSmithAndMarkAndersonPie.Models;
 
 namespace VirginiaSmithAndMarkAndersonPie.Controllers
 {
+    [Authorize]
     public class FeedbackController : Controller
     {
         private readonly IFeedbackRepository _feedbackRepository;
@@ -16,15 +13,16 @@ namespace VirginiaSmithAndMarkAndersonPie.Controllers
         {
             _feedbackRepository = feedbackRepository;
         }
+
         //GET
         public IActionResult Index()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Index(Feedback feedback)
         {
-
             if (ModelState.IsValid)
             {
                 _feedbackRepository.AddFeedback(feedback);

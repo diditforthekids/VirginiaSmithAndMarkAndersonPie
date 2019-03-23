@@ -38,6 +38,7 @@ namespace VirginiaSmithAndMarkAndersonPie
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles(); //wwwroot folder.
+            app.UseAuthentication(); //Added for authentication using identity.
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
