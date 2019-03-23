@@ -29,7 +29,6 @@ namespace VirginiaSmithAndMarkAndersonPie
             }
 
             host.Run();
-
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

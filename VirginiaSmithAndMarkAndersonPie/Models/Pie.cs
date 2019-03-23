@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace VirginiaSmithAndMarkAndersonPie.Models
+﻿namespace VirginiaSmithAndMarkAndersonPie.Models
 {
     public class Pie
     {

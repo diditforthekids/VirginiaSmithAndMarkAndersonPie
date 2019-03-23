@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using VirginiaSmithAndMarkAndersonPie.Models;
 using VirginiaSmithAndMarkAndersonPie.ViewModels;
 
@@ -18,11 +15,10 @@ namespace VirginiaSmithAndMarkAndersonPie.Controllers
         {
             _pieRepository = pieRepository;
         }
+
         // GET: /<controller>/
         public IActionResult Index()
         {
-            
-
             var pies = _pieRepository.GetAllPies().OrderBy(p => p.Name);
 
             var homeViewModel = new HomeViewModel()
@@ -32,6 +28,18 @@ namespace VirginiaSmithAndMarkAndersonPie.Controllers
             };
 
             return View(homeViewModel);
+        }
+
+        //Checks to see if the pie exists in the pieRepository and then returns it if it does.
+        public IActionResult Details(int id)
+        {
+            var pie = _pieRepository.GetPieById(id);
+            if (pie == null)
+            {
+                return NotFound();
+            }
+
+            return View(pie);
         }
     }
 }
